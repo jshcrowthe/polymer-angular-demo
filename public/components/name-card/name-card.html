@@ -18,8 +18,14 @@
   Polymer({
     is: 'name-card',
     properties: {
-      first: String,
-      last: String,
+      first: {
+        type:String,
+        reflectToAttribute: true
+      },
+      last: {
+        type:String,
+        reflectToAttribute: true
+      },
       fullname: {
         computed: '_computeFullName(first, last)'
       },

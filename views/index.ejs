@@ -5,27 +5,19 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link rel='import' href='/components/name-card/name-card.html' />
   </head>
-  <body ng-init="names = [
-      { first:'Josh',   last:'Crowther' },
-      { first:'Jenna',  last:'Crowther' },
-      { first:'Kellie', last:'Crowther' },
-      { first:'Alissa', last:'Crowther' },
-      { first:'Katie',  last:'Crowther' },
-      { first:'Dave',   last:'Crowther' },
-      { first:'Kris',   last:'Crowther' },
-    ]">
+  <body>
     <div class="container">
       <div class="row">
         <h1>Demo</h1>
         <p>
           <label for="f_name">First Name:</label>
-          <input type="text" ng-model="names[0].first">
+          <input type="text" ng-model="f_name">
         </p>
         <p>
           <label for="l_name">Last Name:</label>
-          <input type="text" ng-model="names[0].last">
+          <input type="text" ng-model="l_name">
         </p>
-        <name-card ng-repeat="name in names" first="{{name.first}}" last="{{name.last}}" bind-polymer></name-card>
+        <name-card first="{{f_name}}" last="{{l_name}}" bind-polymer></name-card>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
@@ -37,7 +29,6 @@
         restrict: 'A',
         scope : false,
         compile: function bindPolymerCompile(el, attr) {
-          console.log(el, attr);
           var attrMap = {};
 
           for (var prop in attr) {
@@ -48,9 +39,6 @@
               }
             }
           }
-          console.log('Attribute Map:', attrMap);
-
-
           return function bindPolymerLink(scope, element, attrs) {
 
             // When Polymer sees a change to the bound variable,
