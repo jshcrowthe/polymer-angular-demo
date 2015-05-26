@@ -5,7 +5,7 @@
   <template>
     <p>
       <template is='dom-if' if="{{!edit}}">
-        <span>{{fullName}}</span>
+        <span>{{fullname}}</span>
       </template>
       <template is="dom-if" if="{{edit}}">
         <label>First:</label> <input type="text" value="{{first::input}}"> <label>Last:</label> <input type="text" value="{{last::input}}">
@@ -18,17 +18,9 @@
   Polymer({
     is: 'name-card',
     properties: {
-      first: {
-        type: String,
-        notify: true,
-        reflectToAttribute: true
-      },
-      last: {
-        type: String,
-        reflectToAttribute: true
-      },
-      fullName: {
-        type: String,
+      first: String,
+      last: String,
+      fullname: {
         computed: '_computeFullName(first, last)'
       },
     },
