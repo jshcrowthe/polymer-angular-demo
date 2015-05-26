@@ -1,0 +1,24 @@
+{
+  "name": "polymer-angular-demo",
+  "version": "0.1.0",
+  "authors": [
+    "Josh Crowther <jshcrowthe@gmail.com>"
+  ],
+  "description": "A demo of using Polymer WebComponents with Angular.js",
+  "keywords": [
+    "Polymer",
+    "Angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.9.1"
+  }
+}
