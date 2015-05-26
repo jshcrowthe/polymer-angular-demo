@@ -1,5 +1,5 @@
 # Polymer Angular Demo
-This is just a quick app to demo the use of Angular's $http interceptors.
+This is just a quick demo of using Angular with Polymer WebComponents.
 
 ## Installation
 This is an express app so if you don't already have `Node.js` you'll need it. You can get it at https://nodejs.org/. (However that said I would recommend using [Node Version Manager](https://github.com/creationix/nvm))
