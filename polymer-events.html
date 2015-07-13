@@ -45,7 +45,6 @@
           return function bindPolymerLink(scope, element, attrs) {
             Object.keys(attrMap).forEach(function(key) {
               element.on(key + '-changed', function(event) {
-                if (!event || !event.detail) return;
                 scope.$evalAsync(function() {
                   if (attrMap[key](scope) === event.detail.value) return;
                   attrMap[key].assign(scope, event.detail.value);
