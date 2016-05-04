@@ -8,7 +8,7 @@
         <span>{{fullname}}</span>
       </template>
       <template is="dom-if" if="{{edit}}">
-        <label>First:</label> <input type="text" value="{{first::input}}"> <label>Last:</label> <input type="text" value="{{last::input}}">
+        <label>First:</label> <input type="text" value="{{firstName::input}}"> <label>Last:</label> <input type="text" value="{{lastName::input}}">
       </template>
       <button on-click="toggleEdit"><i class="fa fa-pencil"></i></button>
     </p>
@@ -18,16 +18,16 @@
   Polymer({
     is: 'name-card',
     properties: {
-      first: {
+      firstName: {
         type:String,
         notify: true
       },
-      last: {
+      lastName: {
         type:String,
         notify: true
       },
       fullname: {
-        computed: '_computeFullName(first, last)'
+        computed: '_computeFullName(firstName, lastName)'
       },
     },
     ready: function() {
