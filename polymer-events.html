@@ -38,7 +38,7 @@
             if (angular.isString(attr[prop])) {
               var _match = attr[prop].match(/\{\{\s*([\.\w]+)\s*\}\}/);
               if (_match) {
-                attrMap[prop] = $parse(_match[1]);
+                attrMap[attr.$attr[prop]] = $parse(_match[1]);
               }
             }
           }
